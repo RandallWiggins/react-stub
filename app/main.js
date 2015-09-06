@@ -27,25 +27,9 @@ const TopLevelNavigation = React.createClass({
 const Home = React.createClass({
    mixins: [Router.State],
    render() {
-      return <section>
-         <article>Home View</article>
-      </section>;
-   }
-})
-
-const Page1 = React.createClass({
-   mixins: [Router.State],
-   render() {
-      return <section>
-         <h3>Page1 {this.getParams().name}</h3>
-         <nav>
-         <Link to="page1">Page1</Link>
-         <Link to="page2">Page2</Link>
-         <Link to="page3">Page3</Link>
-         <Link to="page3/:link" params={{link:'link1'}}>Page3</Link>
-         </nav>
-      </section>;
-   }
+      return <section><h3>Home</h3>
+      <article dangerouslySetInnerHTML={{__html: require('./home.html')}}/>
+      </section>}
 })
 
 const Page2 = React.createClass({
@@ -77,10 +61,8 @@ var routes = (
    <Route>
       <Route path="/" name="topNav" handler={TopLevelNavigation}>
          <Route name="home" path="/" handler={Home}/>
-         <Route name="page1" handler={Page1}/>
          <Route name="page2" handler={Page2}/>
          <Route name="page3" handler={Page3}/>
-         <Route name="page3/:link" handler={Page3}/>
       </Route>
       <NotFoundRoute handler={NotFound}/>
    </Route>
@@ -91,9 +73,6 @@ Router.run(routes, function(MatchingComponent) {
                   topLevelNav: [{
                      route: 'home',
                      name: 'Home'
-                  },{
-                     route: 'page1',
-                     name: 'Page One'
                   }, {
                      route: 'page2',
                      name: 'Page Two'
