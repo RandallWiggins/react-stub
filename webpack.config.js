@@ -28,6 +28,9 @@ module.exports = {
             test: /\.jpeg|png$/,
             loader: "url"
         }, {
+            test: /\.html$/,
+            loader: "html"
+        }, {
             test: /\.js$/,
             loader: "babel"
         }]

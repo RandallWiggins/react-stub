@@ -1,24 +1,37 @@
 @import 'bourbon';
 @import 'neat';
-@import "./base/base";
+@import "./bitters/base";
 
-section {
-    @include outer-container(); 
-    p {
-        @include span-columns(4); 
-        border: 1px solid red;
+@mixin gradient($color){
+  @include linear-gradient($color, darken($color,10%));
+  a, a:hover {
+    color:#000;
+  }
+}
+
+$navBarColor:#9ce;
+$sectionColor:#f8f8f8;
+
+body {
+  margin:0;
+}
+header {
+  @include gradient($navBarColor);
+  li{
+    padding:.2em 1em .2em 1em;
+    display:inline-block;
+    &.active {
+      background-color:$sectionColor;
     }
+  }
 }
 
-div.code {
-  @include outer-container();
-  padding:0.5em;
-  text-align: center;
-}
-
-// Enter Neat
 section {
-  @include outer-container;
-  aside { @include span-columns(3); }
-  article { @include span-columns(9); }
+  background-color:$sectionColor;
+  padding:2em;
+  min-height:100vh;
+}
+
+nav > a {
+  display:block;
 }
