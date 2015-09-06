@@ -15,7 +15,7 @@ Build with webpack.
 </p>
 <h4>Installation</h4>
 <pre>
-cd <your-project-folder>
+cd &lt;your-project-folder&gt;
 git clone https://github.com/RandallWiggins/react-stub .
 npm install
 </pre>
