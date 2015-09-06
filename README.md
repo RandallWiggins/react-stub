@@ -19,8 +19,11 @@ Built using with webpack. Demonstrates webpack loaders for babel, SCSS and stati
 cd &lt;your-project-folder&gt;
 git clone https://github.com/RandallWiggins/react-stub .
 npm install
-webpack --watch
 </pre>
 <p>
-A couple of static files will be created in ./build ready to be delivered by your favorite HTTP server.
+A couple of static files will be created in ./build ready to be delivered by your favorite HTTP server. You may want to make the local webpack installation available in your PATH like so:
+<pre>
+export PATH="$PWD/node_modules/.bin:$PATH"
+webpack --watch
+</pre>
 </p>
